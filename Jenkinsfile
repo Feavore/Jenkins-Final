@@ -7,7 +7,7 @@ pipeline {
                 [key: 'WEBHOOK_TRIGGER', value: '$.trigger', defaultValue: '']
             ],
             causeString: 'Triggered by webhook',
-            token: 'push_here',
+            token: 'abc123',
             printContributedVariables: true,
             printPostContent: true
         )
@@ -28,7 +28,7 @@ pipeline {
 
         stage('Clone Repository') {
             steps {
-                git branch: "main", url: 'https://github.com/Feavore/Jenkins-Final.git'
+                git branch: "master", url: 'https://github.com/Feavore/Jenkins-Final.git'
             }
         }
 
