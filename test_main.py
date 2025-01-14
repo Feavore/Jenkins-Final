@@ -18,5 +18,6 @@ client = TestClient(app)
 ])
 def test_check_prime(number, expected):
     response = client.get(f"/check_prime/{number}")
+    print(f"Test /check_prime/10.5: Status Code: {response.status_code}, Response: {response.json() if response.status_code != 422 else 'Unprocessable Entity'}")
     assert response.status_code == 200
     assert response.json() == expected
